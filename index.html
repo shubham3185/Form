@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="reg.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        } 
+        .container{
+            background-color: lightpink;
+            width: 700px;
+            margin: auto;
+            /* text-align: center;
+            justify-content: center;
+            align-items: center; */
+            color: navy;
+        }
+        .bo1{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .box1{
+            width: 300px;
+        }
+        .box{
+            width: 300px;
+            /* border: 1px solid red; */
+            /* float: right; */
+        }
+        .box1 img{
+            height: 150px;
+            width: 150px;
+            /* border-radius: 50%; */
+            object-fit: cover;
+            background: #dfdfdf;
+            /* float: left; */
+        }
+        .box img{
+            height: 100px;
+            width: 200px;
+            /* float: right; */
+            object-fit: cover;
+            background: #dfdfdf;
+        }
+        form{
+            /* margin: 5px; */
+        }
+        label{
+            text-align: justify;
+            /* float: left; */
+            /* padding: 5px; */
+        }
+        input{
+            margin: 5px;
+            text-align: justify;
+            width: 360px;
+            padding: 5px;
+            /* text-align: justify; */
+            
+            /* float: right; */
+        }
+
+        #fname{
+            width: 110px;
+        }
+        #m{
+            width: 20px;
+        }
+        #hname{
+            width: 110px;
+        }
+        button{
+            margin-top: 20px;
+            height: 27px;
+            width: 110px;
+            background-color: white;
+            cursor: pointer;
+            color: brown;
+            font-weight: 700;
+            font-size: large;
+            letter-spacing: 2px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">
+            Paradise Computer Institute
+        </h1>
+        <h2 style="text-align: center;">Registration From</h2>
+        <br>
+        
+            <div class="boxe">
+                <center>
+                <form action="http://127.0.0.1:3000/process_post" method="POST">
+                <label for="">Student Name :</label>
+                <input type="text" placeholder="first Name" id="fname" maxlength="25" name="first_name" required>
+                <input type="text" placeholder="middle name" id="fname" maxlength="20" name="middle_name">
+                <input type="text" placeholder="last Name" id="fname" maxlength="20" name="last_name"><br>
+    
+                <label>Father Name      :</label>
+                <input type="text" placeholder="first Name" maxlength="20" id="hname" name="firstname">
+                <input type="text" placeholder="middle name" maxlength="20" id="hname" name="middlename">
+                <input type="text" placeholder="last Name"  maxlength="20" id="hname" name="lastname"><br>
+    
+                <label>Mother Name :</label>
+                <input type="text" placeholder="" maxlength="15" name="mother_name"><br>
+                
+                <label>D.O.B. :</label>
+                <input type="date" name="date"><br><br>
+    
+                <label>Gender :</label>
+                <label for="">Male
+                <input type="radio" id="m" name="radio"></label>
+                <label for="">Female
+                <input type="radio" id="m" name="radio"></label>
+                <label for="">Other <input type="radio" id="m" name="radio"></label><br><br>
+    
+                <label>Gmail :</label>
+                <input type="email"  placeholder="Enter your E-mail" name="gmail"><br>
+    
+                <label>Password :</label>
+                <input type="text" placeholder="Password" name="Password"><br>
+                
+                <label for="">Address :</label>
+                <textarea name="comment" id="" cols="50" rows="3" placeholder="Address"></textarea><br><br>
+                    <hr>
+                <!-- <label>Message :</label>
+                <input type="comment" placeholder="Describe yourself" maxlength="100" name="Message"><br> -->
+
+                   <div class="bo1">
+                    <div class="box1">
+                        <h4>Photo</h4>
+                        <img src="" alt="">
+                        <input type="file">
+                    </div>
+                    <!-- <div class="box">
+                        <h4>Signature</h4>
+                        <img src="" alt="">
+                        <input type="file">
+                    </div> -->
+                   </div><hr>
+                <button value="submit" type="submit">Submit</button>
+                </form>  
+                </center>
+
+            </div>
+    </div>
+
+
+    <script>
+        const image = document.querySelector("img"),
+        input = document.querySelector("input");
+    
+        input.addEventListener("change", () =>{
+            image.src = URL.createObjectURL(input.files[1]);
+        });
+    </script>
+</body>
+
+</html>
